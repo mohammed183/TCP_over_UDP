@@ -40,44 +40,44 @@ The rUDP\_client.py file contains the client implementation for the reliable UDP
 
 1. The client is asked to choose lose rate and corruption rate (to test the connection): 
 
-![](assets\5.png)
+![](\assets\5.png)
 
 2. Then asked if want a HTTP request or to transmit file: 
 
-![](assets\6.png)
+![](\assets\6.png)
 
 3. File                                                                  HTTP 
 
-![](assets\7.png) 							![](assets\8.png)
+![](\assets\7.png) 							![](\assets\8.png)
 
 4. After entering the file name, the 3-way handshake is completed and then the packets is sent either from server to client or from client to server and the following are some test cases  
 
 **HTTP GET request:** 
 
-![](assets\9.jpeg)
+![](\assets\9.jpeg)
 
 **HTTP POST request:** 
 
-![](assets\10.jpeg)
+![](\assets\10.jpeg)
 
 **Client sending file:** 
 
-![](assets\11.jpeg)
+![](\assets\11.jpeg)
 
 **Client receiving file:** 
 
-![](assets\12.jpeg)
+![](\assets\12.jpeg)
 
 **Bonus:** 
 
 Web page that can upload or download using GET and POST HTTP requests, the requests are printed in the terminals of gateway and server. 
 
-![](assets\13.jpeg)
+![](\assets\13.jpeg)
 
 Wire shark screenshot shows how connection is established between gateway, browser, and server. And how data is sent and received. 
 
-![](assets\14.jpeg)
+![](\assets\14.jpeg)
 
 Example of terminal output while running server and gateway: 
 
-![](assets\15.jpeg)
+![](\assets\15.jpeg)
