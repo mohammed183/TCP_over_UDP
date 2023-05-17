@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File Download and Upload</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>File Download and Upload</h1>
+	<form class="container">
+		<label for="filename">Download file from server:</label>
+		<input type="text" id="filename" name="filename" placeholder="Enter file name">
+		<button type="button" onclick="downloadFile()">Download</button>
+	</form>
+	<br>
+	<form class="container" enctype="multipart/form-data">
+		<label for="upload-file">Upload file to server:</label>
+		<input type="file" id="upload-file" name="upload-file">
+		<button type="button" onclick="uploadFile()">Upload</button>
+	</form>
+
+	<script>
+		function downloadFile() {
+			let filename = document.getElementById("filename").value;
+			let link = document.createElement("a");
+			link.href = `${filename}`;
+			link.download = filename;
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		}
+
+		function uploadFile() {
+			let fileInput = document.getElementById("upload-file");
+			let file = fileInput.files[0];
+			let formData = new FormData();
+			let reader = new FileReader();
+
+			// read the contents of the file as text
+			reader.readAsText(file);
+
+			// wait for the reader to finish loading the file contents
+			reader.onload = function () {
+				// append the file contents to the form data
+				formData.append("file", reader.result);
+
+				// create a new XMLHttpRequest object
+				let xhr = new XMLHttpRequest();
+
+				// set up the request
+				xhr.open("POST", file.name);
+
+				// send the request with the form data
+				xhr.send(formData);
+			};
+		}
+	</script>
+</body>
+</html>
